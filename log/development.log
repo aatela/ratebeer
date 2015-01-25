@@ -5588,3 +5588,76 @@ Processing by BreweriesController#index as HTML
   [1m[35mBrewery Load (0.5ms)[0m  SELECT "breweries".* FROM "breweries"
   Rendered breweries/index.html.erb within layouts/application (44.7ms)
 Completed 200 OK in 264ms (Views: 261.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/breweries" for ::1 at 2015-01-25 19:50:01 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "breweries"[0m
+  [1m[35mBrewery Load (0.7ms)[0m  SELECT "breweries".* FROM "breweries"
+  Rendered breweries/index.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 217ms (Views: 213.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/beers-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:50:01 +0200
+
+
+Started GET "/assets/turbolinks-924184401b7d116eadaaefc96895fa84.js?body=1" for ::1 at 2015-01-25 19:50:01 +0200
+
+
+Started GET "/assets/breweries-069e88c06b889877799890854d7f4c40.css?body=1" for ::1 at 2015-01-25 19:50:02 +0200
+
+
+Started GET "/assets/scaffolds-cda9dfe71bfc8485e4302e22aac24332.css?body=1" for ::1 at 2015-01-25 19:50:02 +0200
+
+
+Started GET "/assets/application-be577fa381e384453088a019dfefe821.css?body=1" for ::1 at 2015-01-25 19:50:02 +0200
+
+
+Started GET "/assets/jquery-eb3e278249152b5b5d5170b73d9dbf52.js?body=1" for ::1 at 2015-01-25 19:50:02 +0200
+
+
+Started GET "/assets/jquery_ujs-0b8f09cf5aec4ba1be1abd9f915c77e2.js?body=1" for ::1 at 2015-01-25 19:50:02 +0200
+
+
+Started GET "/assets/breweries-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:50:02 +0200
+
+
+Started GET "/assets/beers-8f6eecd1178ef85964369ec66d33c4f1.js?body=1" for ::1 at 2015-01-25 19:50:02 +0200
+
+
+Started GET "/assets/application-18f10afd70767e0049304380ce89b979.js?body=1" for ::1 at 2015-01-25 19:50:02 +0200
+
+
+Started GET "/ratings" for ::1 at 2015-01-25 19:50:04 +0200
+Processing by RatingsController#index as HTML
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "ratings"[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT "ratings".* FROM "ratings"
+  [1m[36mBeer Load (0.3ms)[0m  [1mSELECT  "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.3ms)[0m  SELECT  "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.2ms)[0m  [1mSELECT  "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mBeer Load (0.5ms)[0m  SELECT  "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered ratings/index.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 272ms (Views: 267.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/ratings/new" for ::1 at 2015-01-25 19:50:09 +0200
+Processing by RatingsController#new as HTML
+  [1m[36mBeer Load (0.7ms)[0m  [1mSELECT "beers".* FROM "beers"[0m
+  Rendered ratings/new.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 250ms (Views: 246.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/ratings" for ::1 at 2015-01-25 19:50:13 +0200
+Processing by RatingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/HmGXixgTEhhYN7WkASwYl0Xtewt21Z31qaVF9xF8aN1mnPqa0+KN8I2baSb+g6cE3312xeIGWsjrlSoCND3zg==", "rating"=>{"beer_id"=>"1", "score"=>"4"}, "commit"=>"Create Rating"}
+Completed 500 Internal Server Error in 4ms
+
+RuntimeError ():
+  app/controllers/ratings_controller.rb:13:in `create'
+
+
+  Rendered /Users/aatela/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (76.4ms)
+  Rendered /Users/aatela/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (21.5ms)
+  Rendered /Users/aatela/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/aatela/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (2.8ms)
+  Rendered /Users/aatela/.rbenv/versions/2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (169.6ms)
