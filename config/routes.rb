@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
+  resources :users
+
   resources :beers
 
   resources :breweries
 
+  resources :ratings, only: [:index, :new, :create, :destroy]
+
+  resource :session, only: [:new, :create, :delete]
+
+  #get 'ratings', to: 'ratings#index'
+  #get 'ratings/new', to:'ratings#new'
+  #post 'ratings', to: 'ratings#create'
+
   root 'breweries#index'
-  get 'ratings', to: 'ratings#index'
 
-  get 'ratings/new', to:'ratings#new'
+  get 'signup', to: 'users#new'
 
-  post 'ratings', to: 'ratings#create'
-
+  get 'signin', to: 'sessions#new'
+  delete 'signout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
