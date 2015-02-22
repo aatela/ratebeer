@@ -12,6 +12,11 @@ group :test do
   gem 'simplecov', require: false
 end
 
+gem 'bootstrap-sass'
+group :development do
+  gem 'rails_layout'
+end
+
 group :development, :test do
   gem "better_errors"
   gem 'sqlite3'
@@ -23,7 +28,7 @@ group :production do
    gem 'rails_12factor'
 end
 
-ruby '2.0.0'
+ruby '2.2.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
