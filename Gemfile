@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'jquery-turbolinks'
+gem 'rack-mini-profiler'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
